@@ -1,16 +1,19 @@
 import React from 'react';
 // eslint-disable-next-line
 import bootstrap from 'bootstrap/dist/css/bootstrap.css' 
-import { finished } from 'stream';
+import Score from './score';
+
 
 class Counter extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            tijd: 5,
+            aantal_tijd: 60,
+            tijd: 60,
             counter: 0,
-            start: false
+            start: false,
+            kliks: 0
         }
         this.button = this.button.bind(this);
         this.counting_down = this.counting_down.bind(this);
@@ -37,11 +40,21 @@ class Counter extends React.Component {
             console.log("Hey we zijn klaar");
             clearInterval(this.timer);
             document.getElementById('tijd').innerText = "We zijn klaar"
+            this.score()
         } else {
             document.getElementById('counting').innerText = this.state.tijd;
         } 
     } 
-    
+
+    score() {
+        console.log(this.state.counter)
+        console.log(this.state.tijd)
+        this.setState((state) => ({
+            kliks: this.state.counter/this.state.aantal_tijd
+        }));
+        document.getElementById('kliks_seconde').innerText = this.state.kliks;
+    }
+
     render() {
        return(
           <div className="col-sm-12 text-center">
