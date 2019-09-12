@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from './component/header';
 import Counter from './component/counter';
 import Score from './component/score';
-import Footer from './component/footer';
 
 class App extends React.Component {
 
@@ -14,7 +13,6 @@ class App extends React.Component {
             <Header/>
             <Counter/>
             <Score/>
-            <Footer/>
                 </div>
         );
     }

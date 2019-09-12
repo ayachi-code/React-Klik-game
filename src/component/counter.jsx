@@ -9,11 +9,12 @@ class Counter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            aantal_tijd: 60,
-            tijd: 60,
+            aantal_tijd: 10,
+            tijd: 10,
             counter: 0,
             start: false,
-            kliks: 0
+            kliks: 0,
+            highscore: localStorage.getItem('highscore')
         }
         this.button = this.button.bind(this);
         this.counting_down = this.counting_down.bind(this);
@@ -53,6 +54,10 @@ class Counter extends React.Component {
             kliks: this.state.counter/this.state.aantal_tijd
         }));
         document.getElementById('kliks_seconde').innerText = this.state.kliks;
+        if (localStorage.getItem('highscore') < this.state.counter) {
+            //Highscore
+            localStorage.setItem('highscore',this.state.counter)
+        }       
     }
 
     render() {

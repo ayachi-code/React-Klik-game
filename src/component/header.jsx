@@ -3,7 +3,7 @@ import React from 'react';
 class Header extends React.Component {
 
      state = {
-         tijd: 60
+         tijd: 10
      }
 
     aftellen() {
@@ -12,7 +12,7 @@ class Header extends React.Component {
 
     render() {
         return(
-            <div className="row">
+            <div className="d-flex justify-content-center">
                 <div className="bg-primary col-sm-12 text-white"><p id="tijd">Tijd: <span id="counting">{this.state.tijd}</span></p></div>
                 <p></p>
             </div>
