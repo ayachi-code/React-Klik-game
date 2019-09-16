@@ -1,8 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line
 import bootstrap from 'bootstrap/dist/css/bootstrap.css' 
-import Score from './score';
-
 
 class Counter extends React.Component {
 
@@ -18,6 +16,7 @@ class Counter extends React.Component {
         }
         this.button = this.button.bind(this);
         this.counting_down = this.counting_down.bind(this);
+        this.retry = this.retry.bind(this);
     }
 
     button() {
@@ -61,6 +60,10 @@ class Counter extends React.Component {
         }       
     }
 
+    retry() {
+        window.location.href = "/"
+    }
+
     render() {
        return(
           <div className="col-sm-12 text-center">
@@ -68,6 +71,8 @@ class Counter extends React.Component {
             <button id="start" className="rounded-pill w-25 btn btn-primary active" onClick={this.button}>Start</button>
             <br/>
             <button id="delen" className="rounded-pill w-25 mt-3 btn btn-primary active">(nog niet klaar) High score delen</button>
+            <br/>
+            <button id="retry" className="rounded-pill w-25 mt-3 btn btn-primary active" onClick={this.retry}>Opnieuw</button>
             </div>
        );
     }

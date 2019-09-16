@@ -1,4 +1,5 @@
 import React from 'react'
+ // eslint-disable-next-line
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 class Score extends React.Component {
