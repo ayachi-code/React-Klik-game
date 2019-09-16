@@ -67,7 +67,7 @@ class Counter extends React.Component {
             <p className="h1">{this.state.counter}</p>
             <button id="start" className="rounded-pill w-25 btn btn-primary active" onClick={this.button}>Start</button>
             <br/>
-            <button id="delen" className="rounded-pill w-25 mt-3 btn btn-primary active">High score delen</button>
+            <button id="delen" className="rounded-pill w-25 mt-3 btn btn-primary active">(nog niet klaar) High score delen</button>
             </div>
        );
     }
