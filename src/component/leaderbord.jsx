@@ -1,5 +1,7 @@
 import React from 'react';
+//eslint-disable-next-line
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+
 
 class Leaderbord extends React.Component {
     render() {
@@ -17,6 +19,7 @@ class Leaderbord extends React.Component {
                         <th>Bilal</th>
                         <th>&nbsp; 120</th>
                     </tr>
+                    
                 </tbody>
                     </table>
                 </div>
