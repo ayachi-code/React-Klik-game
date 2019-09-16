@@ -21,12 +21,12 @@ class Counter extends React.Component {
     }
 
     button() {
-
             this.setState((state) => ({
                 counter: state.counter + 1,
                 start: state.start = true
             }));
             if (!this.state.start === true) {
+                document.getElementById('start').disabled = false;
                 console.log("start")
                 document.getElementById("start").innerText = "blijf klikken"
                 this.timer = setInterval(this.counting_down,1000);
@@ -48,15 +48,16 @@ class Counter extends React.Component {
     } 
 
     score() {
-        console.log(this.state.counter)
-        console.log(this.state.tijd)
+        document.getElementById('start').disabled = true;
         this.setState((state) => ({
             kliks: this.state.counter/this.state.aantal_tijd
         }));
         document.getElementById('kliks_seconde').innerText = this.state.kliks;
         if (localStorage.getItem('highscore') < this.state.counter) {
             //Highscore
+            console.log("Nieuwe highscore")
             localStorage.setItem('highscore',this.state.counter)
+            document.getElementById('score').innerHTML = this.state.counter;
         }       
     }
 
@@ -64,7 +65,9 @@ class Counter extends React.Component {
        return(
           <div className="col-sm-12 text-center">
             <p className="h1">{this.state.counter}</p>
-            <button id="start" className="btn btn-primary active" onClick={this.button}>Start</button>
+            <button id="start" className="rounded-pill w-25 btn btn-primary active" onClick={this.button}>Start</button>
+            <br/>
+            <button id="delen" className="rounded-pill w-25 mt-3 btn btn-primary active">High score delen</button>
             </div>
        );
     }
