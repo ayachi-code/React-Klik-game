@@ -8,14 +8,11 @@ import Admin from 'firebase-admin';
 
 const secret = require('../secret/code.json');
 
-
 Admin.initializeApp({
     credential: Admin.credential.cert(secret),
     databaseURL: "https://fast-clicker.firebaseio.com"
 }
 );
-
-
 
 class Score extends React.Component {
     
@@ -24,11 +21,6 @@ class Score extends React.Component {
         this.state = {
             high_score: localStorage.getItem('highscore')
         }
-    }
-
-    share_button() {
-        console.log("Je wilt je score delen met de leaderbord")
-        
     }
 
     render() {
