@@ -80,9 +80,14 @@ class Counter extends React.Component {
         console.log("Je wilt je score delen met de leaderbord") 
         let gebruiksnaam = window.prompt('Type een gebruiksnaam'); 
         console.log(gebruiksnaam);
-        let firebase_database = Firebase.database();
-        console.log(firebase_database)
-        //Sturen naar database   
+        //Sturen naar database
+        let database = Firebase.database();
+        let gebruiker = database.ref('gebruiker');
+        gebruiker.set({
+            Naam: "Mark",
+            Score: 10
+        });
+
     }
 
     render() {
