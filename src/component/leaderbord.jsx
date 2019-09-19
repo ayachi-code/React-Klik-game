@@ -4,6 +4,8 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 
 class Leaderbord extends React.Component {
+
+    
     render() {
         return(
             <div id="leaderbord">
@@ -14,12 +16,11 @@ class Leaderbord extends React.Component {
                         <th>&nbsp; Highscore</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="Scorens">
                     <tr>
                         <th>Bilal</th>
                         <th>&nbsp; 120</th>
-                    </tr>
-                    
+                    </tr>    
                 </tbody>
                     </table>
                 </div>
