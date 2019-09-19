@@ -3,20 +3,19 @@ import React from 'react';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 // eslint-disable-next-line
 import Firebase from 'firebase';
-// eslint-disable-next-line
-import Admin from 'firebase-admin';
-
-const secret = require('../secret/code.json')
 
 class Counter extends React.Component {
-
     constructor(props) {
         //Firebase initialiseren
-        Admin.initializeApp({
-            credential: Admin.credential.cert(secret),
-            databaseURL: "https://fast-clicker.firebaseio.com"
+        Firebase.initializeApp({
+            apiKey: "AIzaSyBGcgqsaP9Cv1Nl5w6BXdi923a6r3b_naI",
+            authDomain: "fast-clicker.firebaseapp.com",
+            databaseURL: "https://fast-clicker.firebaseio.com",
+            projectId: "fast-clicker",
+            storageBucket: "fast-clicker.appspot.com",
+            messagingSenderId: "422005583900",
+            appId: "1:422005583900:web:85231ed2fb2396d964afd9" 
         });
-
         super(props)
         this.state = {
             aantal_tijd: 10,
@@ -81,6 +80,8 @@ class Counter extends React.Component {
         console.log("Je wilt je score delen met de leaderbord") 
         let gebruiksnaam = window.prompt('Type een gebruiksnaam'); 
         console.log(gebruiksnaam);
+        let firebase_database = Firebase.database();
+        console.log(firebase_database)
         //Sturen naar database   
     }
 
