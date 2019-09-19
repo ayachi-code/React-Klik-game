@@ -83,9 +83,9 @@ class Counter extends React.Component {
         //Sturen naar database
         let database = Firebase.database();
         let gebruiker = database.ref('gebruiker');
-        gebruiker.set({
-            Naam: "Mark",
-            Score: 10
+        gebruiker.push({
+            Naam: gebruiksnaam,
+            Score: this.state.highscore
         });
 
     }
