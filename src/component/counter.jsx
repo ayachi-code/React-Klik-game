@@ -1,6 +1,18 @@
 import React from 'react';
 // eslint-disable-next-line
-import bootstrap from 'bootstrap/dist/css/bootstrap.css' 
+import bootstrap from 'bootstrap/dist/css/bootstrap.css'
+// eslint-disable-next-line
+import Firebase from 'firebase';
+// eslint-disable-next-line
+import Admin from 'firebase-admin';
+
+const secret = require('../secret/code.json')
+
+Admin.initializeApp({
+    credential: Admin.credential.cert(secret),
+    databaseURL: "https://fast-clicker.firebaseio.com"
+}
+);
 
 class Counter extends React.Component {
 
