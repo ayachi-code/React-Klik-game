@@ -8,15 +8,15 @@ import Admin from 'firebase-admin';
 
 const secret = require('../secret/code.json')
 
-Admin.initializeApp({
-    credential: Admin.credential.cert(secret),
-    databaseURL: "https://fast-clicker.firebaseio.com"
-}
-);
-
 class Counter extends React.Component {
 
     constructor(props) {
+        //Firebase initialiseren
+        Admin.initializeApp({
+            credential: Admin.credential.cert(secret),
+            databaseURL: "https://fast-clicker.firebaseio.com"
+        });
+
         super(props)
         this.state = {
             aantal_tijd: 10,
