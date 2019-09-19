@@ -32,6 +32,7 @@ class Counter extends React.Component {
     }
 
     button() {
+            document.getElementById('delen').disabled = true;
             this.setState((state) => ({
                 counter: state.counter + 1,
                 start: state.start = true
@@ -45,6 +46,7 @@ class Counter extends React.Component {
     }
     
     counting_down() {
+        //document.getElementById('delen').disabled = true;
         this.setState((state) => ({
             tijd: state.tijd -= 1
         }));
@@ -60,6 +62,7 @@ class Counter extends React.Component {
 
     score() {
         document.getElementById('start').disabled = true;
+        document.getElementById('delen').disabled = false;
         this.setState((state) => ({
             kliks: this.state.counter/this.state.aantal_tijd
         }));
@@ -85,7 +88,7 @@ class Counter extends React.Component {
         let gebruiker = database.ref('gebruiker');
         gebruiker.push({
             Naam: gebruiksnaam,
-            Score: this.state.highscore
+            Score: document.getElementById('score').innerHTML
         });
 
     }
