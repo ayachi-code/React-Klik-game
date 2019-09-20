@@ -11,11 +11,9 @@ class Leaderbord extends React.Component {
     }
 
     update_leaderbord(gebruikers,top5) {
-        /*
-        for (let i in top5) {
-            console.log(top5[i] + " " + gebruikers[top5[i]])
-            document.get
-        } */
+   
+        //console.log(top5[i] + " " + gebruikers[top5[i]])
+      
         document.getElementById("1").innerText = top5[0]
         document.getElementById("2").innerText = gebruikers[top5[0]]
         document.getElementById("3").innerText = top5[1]
@@ -53,7 +51,6 @@ class Leaderbord extends React.Component {
             this.update_leaderbord(gebruikers_per,gebruikers_per_keys);
             //console.log(gebruikers_per_keys);
         });
-    
     }
 
     render() {

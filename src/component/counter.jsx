@@ -80,6 +80,7 @@ class Counter extends React.Component {
     }
 
     share_button() {
+        localStorage.setItem('stopa',true);
         console.log("Je wilt je score delen met de leaderbord") 
         let gebruiksnaam = window.prompt('Type een gebruiksnaam'); 
         console.log(gebruiksnaam);
