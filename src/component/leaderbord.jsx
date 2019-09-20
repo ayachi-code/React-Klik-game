@@ -13,6 +13,12 @@ class Leaderbord extends React.Component {
     update_leaderbord(gebruikers,top5) {
         for (let i in top5) {
             console.log(top5[i] + " " + gebruikers[top5[i]])
+            //Invoegen in leaderbord
+            let score_tag = document.createElement("p")
+            let score_tag_node = document.createTextNode(top5[i] + " " + gebruikers[top5[i]])
+            score_tag.appendChild(score_tag_node);
+            document.getElementById("Scorens").appendChild(score_tag)
+               
         } 
         
     }
