@@ -90,7 +90,6 @@ class Counter extends React.Component {
             Naam: gebruiksnaam,
             Score: document.getElementById('score').innerHTML
         });
-
     }
 
     render() {

@@ -11,23 +11,22 @@ class Leaderbord extends React.Component {
     }
 
     update_leaderbord(gebruikers,top5) {
+        /*
         for (let i in top5) {
             console.log(top5[i] + " " + gebruikers[top5[i]])
-            //Invoegen in leaderbord
-            let scoren_tag_tr = document.createElement("tr")
-            //Naam
-            let scoren_tag_th1 = document.createElement("th");   
-            let scoren_tag_th1_naam = document.createTextNode(top5[i])
-            //Highscore
-            let scoren_tag_th2 = document.createElement("th");   
-            let scoren_tag_th2_score = document.createTextNode(gebruikers[top5[i]])
-            //Appende
-            scoren_tag_th1.appendChild(scoren_tag_th1_naam);
-            scoren_tag_th2.appendChild(scoren_tag_th2_score);
-            scoren_tag_tr.appendChild(scoren_tag_th1);
-            scoren_tag_tr.appendChild(scoren_tag_th2);
-            document.getElementById('Scorens').appendChild(scoren_tag_tr);
-        } 
+            document.get
+        } */
+        document.getElementById("1").innerText = top5[0]
+        document.getElementById("2").innerText = gebruikers[top5[0]]
+        document.getElementById("3").innerText = top5[1]
+        document.getElementById("4").innerText = gebruikers[top5[1]]
+        document.getElementById("5").innerText = top5[2]
+        document.getElementById("6").innerText = gebruikers[top5[2]]
+        document.getElementById("7").innerText = top5[3]
+        document.getElementById("8").innerText = gebruikers[top5[3]]
+        document.getElementById("9").innerText = top5[4]
+        document.getElementById("10").innerText = gebruikers[top5[4]]
+        
         
     }
 
@@ -68,6 +67,26 @@ class Leaderbord extends React.Component {
                     </tr>
                 </thead>
                 <tbody id="Scorens"> 
+                    <tr>
+                        <th id="1"></th>
+                        <th id="2"></th>
+                    </tr>
+                    <tr>
+                        <th id="3"></th>
+                        <th id="4"></th>
+                    </tr>
+                    <tr>
+                        <th id="5"></th>
+                        <th id="6"></th>
+                    </tr>
+                    <tr>
+                        <th id="7"></th>
+                        <th id="8"></th>
+                    </tr>
+                    <tr>
+                        <th id="9"></th>
+                        <th id="10"></th>
+                    </tr>
                 </tbody>
                     </table>
                 </div>
