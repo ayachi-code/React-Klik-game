@@ -67,11 +67,7 @@ class Leaderbord extends React.Component {
                         <th>&nbsp; Highscore</th>
                     </tr>
                 </thead>
-                <tbody id="Scorens">
-                    <tr>
-                        <th>Bilal</th>
-                        <th>&nbsp; 120</th>
-                    </tr>    
+                <tbody id="Scorens"> 
                 </tbody>
                     </table>
                 </div>
