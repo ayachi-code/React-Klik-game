@@ -1,7 +1,7 @@
 import React from 'react';
 //eslint-disable-next-line
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
-
+import Firebase from 'firebase';
 
 class Leaderbord extends React.Component {
 
@@ -12,6 +12,14 @@ class Leaderbord extends React.Component {
 
     laden() {
         console.log("Highscore en username halen uit database")
+        let database = Firebase.database();
+        let ref = database.ref('gebruiker');
+        ref.on('value',(data) => {
+            //console.log(data.val())
+            Object.keys(data.val()).forEach((gebruiker) => {
+                console.log("Naam: " + data.val()[gebruiker].Naam);
+            });
+        });
     }
 
     render() {
