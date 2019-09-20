@@ -11,15 +11,19 @@ class Leaderbord extends React.Component {
     }
 
     laden() {
+        let Leaderbord_nasco;
+        let gebruikers = {naam: [],Highscores: []}
         console.log("Highscore en username halen uit database")
         let database = Firebase.database();
         let ref = database.ref('gebruiker');
         ref.on('value',(data) => {
             //console.log(data.val())
             Object.keys(data.val()).forEach((gebruiker) => {
-                let Leaderbord_nasco = "Naam: " + data.val()[gebruiker].Naam + ", HighScore: " + data.val()[gebruiker].Score
-                console.log(Leaderbord_nasco)
+                gebruikers.naam.push(data.val()[gebruiker].Naam);
+                gebruikers.Highscores.push(data.val()[gebruiker].Score);
+                //Leaderbord_nasco = "Naam: " + data.val()[gebruiker].Naam + ", HighScore: " + data.val()[gebruiker].Score
             });
+            console.log(gebruikers)
         });
     }
 
