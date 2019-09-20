@@ -29,7 +29,8 @@ class Leaderbord extends React.Component {
             gebruikers_per_keys.sort((a,b) => {
                return gebruikers_per[b] - gebruikers_per[a];
             })
-             console.log(gebruikers_per_keys);
+            gebruikers_per_keys = gebruikers_per_keys.slice(0,5)
+            console.log(gebruikers_per_keys);
         });
     
     }
