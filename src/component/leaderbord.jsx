@@ -10,6 +10,13 @@ class Leaderbord extends React.Component {
         this.laden = this.laden.bind(this);
     }
 
+    update_leaderbord(gebruikers,top5) {
+        for (let i in top5) {
+            console.log(top5[i] + " " + gebruikers[top5[i]])
+        } 
+        
+    }
+
     laden() {
         let gebruikers = {naam: [],Highscores: []}
         let gebruikers_per = {}
@@ -22,7 +29,7 @@ class Leaderbord extends React.Component {
                 gebruikers.Highscores.push(data.val()[gebruiker].Score);
             });
             for (let key in gebruikers.naam && gebruikers.Highscores) {
-                console.log(gebruikers.naam[key] + " " + gebruikers.Highscores[key]);
+                //console.log(gebruikers.naam[key] + " " + gebruikers.Highscores[key]);
                 gebruikers_per[gebruikers.naam[key]] = gebruikers.Highscores[key]
             }
             let gebruikers_per_keys = Object.keys(gebruikers_per);
@@ -30,7 +37,8 @@ class Leaderbord extends React.Component {
                return gebruikers_per[b] - gebruikers_per[a];
             })
             gebruikers_per_keys = gebruikers_per_keys.slice(0,5)
-            console.log(gebruikers_per_keys);
+            this.update_leaderbord(gebruikers_per,gebruikers_per_keys);
+            //console.log(gebruikers_per_keys);
         });
     
     }
