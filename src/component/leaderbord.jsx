@@ -5,10 +5,18 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 class Leaderbord extends React.Component {
 
-    
+    constructor(props) {
+        super(props);
+        this.laden = this.laden.bind(this);
+    }
+
+    laden() {
+        console.log("Highscore en username halen uit database")
+    }
+
     render() {
         return(
-            <div id="leaderbord">
+            <div id="leaderbord" onLoad={this.laden()}>
                 <table className="border border-primary">
                 <thead className="border border-primary">
                     <tr>
