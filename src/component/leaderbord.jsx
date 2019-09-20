@@ -14,11 +14,19 @@ class Leaderbord extends React.Component {
         for (let i in top5) {
             console.log(top5[i] + " " + gebruikers[top5[i]])
             //Invoegen in leaderbord
-            let score_tag = document.createElement("p")
-            let score_tag_node = document.createTextNode(top5[i] + " " + gebruikers[top5[i]])
-            score_tag.appendChild(score_tag_node);
-            document.getElementById("Scorens").appendChild(score_tag)
-               
+            let scoren_tag_tr = document.createElement("tr")
+            //Naam
+            let scoren_tag_th1 = document.createElement("th");   
+            let scoren_tag_th1_naam = document.createTextNode(top5[i])
+            //Highscore
+            let scoren_tag_th2 = document.createElement("th");   
+            let scoren_tag_th2_score = document.createTextNode(gebruikers[top5[i]])
+            //Appende
+            scoren_tag_th1.appendChild(scoren_tag_th1_naam);
+            scoren_tag_th2.appendChild(scoren_tag_th2_score);
+            scoren_tag_tr.appendChild(scoren_tag_th1);
+            scoren_tag_tr.appendChild(scoren_tag_th2);
+            document.getElementById('Scorens').appendChild(scoren_tag_tr);
         } 
         
     }
