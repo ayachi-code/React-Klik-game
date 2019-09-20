@@ -17,7 +17,7 @@ class Leaderbord extends React.Component {
         ref.on('value',(data) => {
             //console.log(data.val())
             Object.keys(data.val()).forEach((gebruiker) => {
-                console.log("Naam: " + data.val()[gebruiker].Naam + ", Score: " + data.val()[gebruiker].Score);
+                console.log("Naam: " + data.val()[gebruiker].Naam + ", HighScore: " + data.val()[gebruiker].Score);
             });
         });
     }
