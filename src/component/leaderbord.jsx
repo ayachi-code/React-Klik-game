@@ -11,7 +11,6 @@ class Leaderbord extends React.Component {
     }
 
     laden() {
-        let Leaderbord_nasco;
         let gebruikers = {naam: [],Highscores: []}
         let gebruikers_per = {}
         console.log("Highscore en username halen uit database")
@@ -21,13 +20,16 @@ class Leaderbord extends React.Component {
             Object.keys(data.val()).forEach((gebruiker) => {
                 gebruikers.naam.push(data.val()[gebruiker].Naam);
                 gebruikers.Highscores.push(data.val()[gebruiker].Score);
-                //Leaderbord_nasco = "Naam: " + data.val()[gebruiker].Naam + ", HighScore: " + data.val()[gebruiker].Score
             });
             for (let key in gebruikers.naam && gebruikers.Highscores) {
                 console.log(gebruikers.naam[key] + " " + gebruikers.Highscores[key]);
                 gebruikers_per[gebruikers.naam[key]] = gebruikers.Highscores[key]
             }
-            console.log(gebruikers_per)
+            let gebruikers_per_keys = Object.keys(gebruikers_per);
+            gebruikers_per_keys.sort((a,b) => {
+               return gebruikers_per[b] - gebruikers_per[a];
+            })
+             console.log(gebruikers_per_keys);
         });
     
     }
