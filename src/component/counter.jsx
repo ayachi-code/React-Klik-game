@@ -6,6 +6,11 @@ import Firebase from 'firebase';
 import Bad from 'bad-words';
 
 const slecht_woord = new Bad({placeHolder: "X"});
+const slecht_woord_json = require('../slech.json');
+
+for (let i = 0; i < slecht_woord_json.slecht.length; i++) {
+    slecht_woord.addWords(slecht_woord_json.slecht[i]);
+}
 
 class Counter extends React.Component {
     constructor(props) {
