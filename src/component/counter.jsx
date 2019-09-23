@@ -89,16 +89,16 @@ class Counter extends React.Component {
 
     share_button() {
         console.log("Je wilt je score delen met de leaderbord") 
-        let gebruiksnaam = window.prompt('Type een gebruiksnaam'); 
-        if (gebruiksnaam === "" || gebruiksnaam === null) {
+        this.gebruiksnaam = window.prompt('Type een gebruiksnaam');
+        //console.log(this.scheldwoord)
+        if (this.gebruiksnaam === "" || this.gebruiksnaam === null) {
             console.log("Voer een naam in");
         } else {
-        //console.log(slecht_woord.clean(gebruiksnaam));
         //Sturen naar database
-        let database = Firebase.database();
-        let gebruiker = database.ref('gebruiker');
+        const database = Firebase.database();
+        const gebruiker = database.ref('gebruiker');
         gebruiker.push({
-            Naam: slecht_woord.clean(gebruiksnaam),//gebruiksnaam,
+            Naam: slecht_woord.clean(this.gebruiksnaam),//gebruiksnaam,
             Score: document.getElementById('score').innerHTML
         });
     }

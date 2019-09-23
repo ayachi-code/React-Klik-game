@@ -35,6 +35,7 @@ class Leaderbord extends React.Component {
                 gebruikers.naam.push(data.val()[gebruiker].Naam);
                 gebruikers.Highscores.push(data.val()[gebruiker].Score);
             });
+            //eslint-disable-next-line
             for (let key in gebruikers.naam && gebruikers.Highscores) {
                 //console.log(gebruikers.naam[key] + " " + gebruikers.Highscores[key]);
                 gebruikers_per[gebruikers.naam[key]] = gebruikers.Highscores[key]
