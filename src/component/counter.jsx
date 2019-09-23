@@ -96,7 +96,7 @@ class Counter extends React.Component {
             console.log("Jij gebruikt een scheld woord")
             alert("Hey hey hey,jij gebruikt een scheldwoord gebruik een netter naam");
         } else {
-        //Sturen naar database
+        //Sturen naar database a
         const database = Firebase.database();
         const gebruiker = database.ref('gebruiker');
         gebruiker.push({
