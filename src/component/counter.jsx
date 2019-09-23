@@ -5,7 +5,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import Firebase from 'firebase';
 import Bad from 'bad-words';
 
-const slecht_woord = new Bad();
+const slecht_woord = new Bad({placeHolder: "X"});
 
 class Counter extends React.Component {
     constructor(props) {
@@ -85,15 +85,15 @@ class Counter extends React.Component {
     share_button() {
         console.log("Je wilt je score delen met de leaderbord") 
         let gebruiksnaam = window.prompt('Type een gebruiksnaam'); 
-        if (gebruiksnaam === "") {
+        if (gebruiksnaam === "" || gebruiksnaam === null) {
             console.log("Voer een naam in");
         } else {
-        console.log(gebruiksnaam);
+        //console.log(slecht_woord.clean(gebruiksnaam));
         //Sturen naar database
         let database = Firebase.database();
         let gebruiker = database.ref('gebruiker');
         gebruiker.push({
-            Naam: gebruiksnaam,
+            Naam: slecht_woord.clean(gebruiksnaam),//gebruiksnaam,
             Score: document.getElementById('score').innerHTML
         });
     }
