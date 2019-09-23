@@ -5,7 +5,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import Firebase from 'firebase';
 import Bad from 'bad-words';
 
-const slecht_woord = new Bad({placeHolder: "X"});
+const slecht_woord = new Bad({placeHolder: "*"});
 const slecht_woord_json = require('../slech.json');
 
 for (let i = 0; i < slecht_woord_json.slecht.length; i++) {
@@ -54,7 +54,6 @@ class Counter extends React.Component {
     }
     
     counting_down() {
-        //document.getElementById('delen').disabled = true;
         this.setState((state) => ({
             tijd: state.tijd -= 1
         }));
@@ -90,9 +89,12 @@ class Counter extends React.Component {
     share_button() {
         console.log("Je wilt je score delen met de leaderbord") 
         this.gebruiksnaam = window.prompt('Type een gebruiksnaam');
-        //console.log(this.scheldwoord)
-        if (this.gebruiksnaam === "" || this.gebruiksnaam === null) {
+        this.gebruiksnaam_secret = slecht_woord.clean(this.gebruiksnaam);
+        if (this.gebruiksnaam === "" || this.gebruiksnaam === null || this.gebruiksnaam.length >= 8) {
             console.log("Voer een naam in");
+        } else if (this.gebruiksnaam_secret.includes('*')) {
+            console.log("Jij gebruikt een scheld woord")
+            alert("Hey hey hey,jij gebruikt een scheldwoord gebruik een netter naam");
         } else {
         //Sturen naar database
         const database = Firebase.database();
