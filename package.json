@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bad-words": "^3.0.3",
     "bootstrap": "^4.3.1",
     "fetch": "^1.1.0",
     "firebase": "^6.6.1",

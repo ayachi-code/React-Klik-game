@@ -80,9 +80,11 @@ class Counter extends React.Component {
     }
 
     share_button() {
-        localStorage.setItem('stopa',true);
         console.log("Je wilt je score delen met de leaderbord") 
         let gebruiksnaam = window.prompt('Type een gebruiksnaam'); 
+        if (gebruiksnaam === "") {
+            console.log("Voer een naam in");
+        } else {
         console.log(gebruiksnaam);
         //Sturen naar database
         let database = Firebase.database();
@@ -91,6 +93,7 @@ class Counter extends React.Component {
             Naam: gebruiksnaam,
             Score: document.getElementById('score').innerHTML
         });
+    }
     }
 
     render() {

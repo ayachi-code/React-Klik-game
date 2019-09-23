@@ -15,7 +15,7 @@ class App extends React.Component {
             <Counter/>
             <Score/>
             <Leaderbord/>
-                </div>
+            </div>
         );
     }
 }

@@ -11,9 +11,7 @@ class Leaderbord extends React.Component {
     }
 
     update_leaderbord(gebruikers,top5) {
-   
         //console.log(top5[i] + " " + gebruikers[top5[i]])
-      
         document.getElementById("1").innerText = top5[0]
         document.getElementById("2").innerText = gebruikers[top5[0]]
         document.getElementById("3").innerText = top5[1]
@@ -24,8 +22,6 @@ class Leaderbord extends React.Component {
         document.getElementById("8").innerText = gebruikers[top5[3]]
         document.getElementById("9").innerText = top5[4]
         document.getElementById("10").innerText = gebruikers[top5[4]]
-        
-        
     }
 
     laden() {
