@@ -3,6 +3,9 @@ import React from 'react';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 // eslint-disable-next-line
 import Firebase from 'firebase';
+import Bad from 'bad-words';
+
+const slecht_woord = new Bad();
 
 class Counter extends React.Component {
     constructor(props) {
