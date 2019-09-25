@@ -107,7 +107,7 @@ class Counter extends React.Component {
     render() {
        return(
           <div>
-            <p className="float-right h1">{this.state.counter}</p>
+            <p className="display-1 float-right h1">{this.state.counter}</p>
             <button id="start" className="rounded-pill w-25 mt-3 btn btn-primary active" onClick={this.button}>Start</button>
             <br/>
             <button id="delen" className="rounded-pill w-25 mt-3 btn btn-primary active" onClick={this.share_button}>High score delen</button>
