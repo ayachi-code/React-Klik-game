@@ -36,7 +36,7 @@ class Counter extends React.Component {
         this.button = this.button.bind(this);
         this.counting_down = this.counting_down.bind(this);
         this.retry = this.retry.bind(this);
-        this.share_button = this.share_button.bind(this)
+        this.share_button = this.share_button.bind(this);
     }
 
     button() {
@@ -80,6 +80,7 @@ class Counter extends React.Component {
             localStorage.setItem('highscore',this.state.counter)
             document.getElementById('score').innerHTML = this.state.counter;
         }       
+        return this.state.counter
     }
 
     retry() {
@@ -107,7 +108,7 @@ class Counter extends React.Component {
     render() {
        return(
           <div>
-            <p className="display-1 mt-5 col-sm-12 text-center h1">{this.state.counter}</p>
+            <p className="display-1 float-left h1">{this.state.counter}</p>
             <p className="display-1 float-right h1">{this.state.tijd}</p>
             <button id="start" className="rounded-pill w-25 mt-3 btn btn-primary active" onClick={this.button}>Start</button>
             <br/>
@@ -121,4 +122,5 @@ class Counter extends React.Component {
 }
 
 
-export default Counter;
+
+export default Counter

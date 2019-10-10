@@ -2,6 +2,7 @@ import React from 'react';
 //eslint-disable-next-line
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import Firebase from 'firebase';
+const hallo = require('./counter').a
 
 class Leaderbord extends React.Component {
 
@@ -9,7 +10,7 @@ class Leaderbord extends React.Component {
         super(props);
         this.laden = this.laden.bind(this);
     }
-
+    
     update_leaderbord(gebruikers,top5) {
         //console.log(top5[i] + " " + gebruikers[top5[i]])
         document.getElementById("1").innerText = top5[0]
